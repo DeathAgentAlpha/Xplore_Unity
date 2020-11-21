@@ -6,20 +6,23 @@ using Vuforia;
 
 public class coinClickerScript : MonoBehaviour
 {
+    public GameObject imageTarget;
     public GameObject vbObj;
-    public GameObject roomInfoPlane;
-    public GameObject roomInfoText;
-    public GameObject nextHintText;
-    public GameObject coin;
-    public Text scoreText;
+    GameObject coin;
+    GameObject roomInfoPlane;
+    GameObject nextHintPlane;
+    Text scoreText;
 
     void Start()
     {
-        vbObj = GameObject.Find("coinClickerButton");
+        coin = imageTarget.transform.GetChild(0).gameObject;
+        roomInfoPlane = imageTarget.transform.GetChild(2).gameObject;
+        nextHintPlane = imageTarget.transform.GetChild(3).gameObject;
+        scoreText = GameObject.Find("coinScoreText").GetComponent<Text>();
+
         vbObj.GetComponent<VirtualButtonBehaviour>().RegisterOnButtonPressed(onButtonPressed);
         roomInfoPlane.SetActive(false);
-        roomInfoText.SetActive(false);
-        nextHintText.SetActive(false);
+        nextHintPlane.SetActive(false);
     }
 
     public void onButtonPressed(VirtualButtonBehaviour vb)
@@ -28,14 +31,13 @@ public class coinClickerScript : MonoBehaviour
         {
             coin.SetActive(false);
             roomInfoPlane.SetActive(true);
-            roomInfoText.SetActive(true);
             string currScore = scoreText.text;
             int scoreInt = currScore[currScore.Length -1] - '0';
             ++scoreInt;
             currScore = currScore.Substring(0, currScore.Length - 1) + scoreInt.ToString();
             scoreText.text = currScore;
         }
-        Debug.Log("Btn Pressed!");
+        //Debug.Log("Btn Pressed!");
     }
 
     // Update is called once per frame
