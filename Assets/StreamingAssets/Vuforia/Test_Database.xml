@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="image4" size="0.230000 0.139672" />
+    <ImageTarget name="image3" size="0.230000 0.161806" />
+    <ImageTarget name="image2" size="0.230000 0.160285" />
+    <ImageTarget name="image1" size="0.230000 0.141000" />
     <ImageTarget name="Classmate_book_2" size="0.210000 0.297017" />
     <ImageTarget name="Classmate_book" size="0.280000 0.358400" />
     <ImageTarget name="yellow_reverse" size="0.560000 0.856610" />

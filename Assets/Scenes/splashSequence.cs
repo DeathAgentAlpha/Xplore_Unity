@@ -17,14 +17,14 @@ public class splashSequence : MonoBehaviour
 
     IEnumerator ToSplashTwo()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         sceneNumber = 1;
         SceneManager.LoadScene(1);
     }
 
     IEnumerator ToMainScene()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         sceneNumber = 2;
         SceneManager.LoadScene(2);
     }
