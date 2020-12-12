@@ -12,19 +12,19 @@ public class splashSequence : MonoBehaviour
         if(sceneNumber == 0)
             StartCoroutine(ToSplashTwo());
         if(sceneNumber == 1)
-            StartCoroutine(ToMainScene());
+            StartCoroutine(ToTutorialScene());
     }
 
     IEnumerator ToSplashTwo()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         sceneNumber = 1;
         SceneManager.LoadScene(1);
     }
 
-    IEnumerator ToMainScene()
+    IEnumerator ToTutorialScene()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         sceneNumber = 2;
         SceneManager.LoadScene(2);
     }

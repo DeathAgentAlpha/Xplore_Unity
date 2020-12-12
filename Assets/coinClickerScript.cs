@@ -8,6 +8,7 @@ public class coinClickerScript : MonoBehaviour
 {
     public GameObject imageTarget;
     public GameObject vbObj;
+    public GameObject nextCoin;
     GameObject coin;
     GameObject roomInfoPlane;
     GameObject nextHintPlane;
@@ -23,6 +24,7 @@ public class coinClickerScript : MonoBehaviour
         vbObj.GetComponent<VirtualButtonBehaviour>().RegisterOnButtonPressed(onButtonPressed);
         roomInfoPlane.SetActive(false);
         nextHintPlane.SetActive(false);
+        nextCoin.SetActive(false);
     }
 
     public void onButtonPressed(VirtualButtonBehaviour vb)
@@ -31,6 +33,7 @@ public class coinClickerScript : MonoBehaviour
         {
             coin.SetActive(false);
             roomInfoPlane.SetActive(true);
+            nextCoin.SetActive(true);
             string currScore = scoreText.text;
             int scoreInt = currScore[currScore.Length -1] - '0';
             ++scoreInt;
