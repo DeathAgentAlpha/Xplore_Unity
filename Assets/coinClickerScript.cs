@@ -9,6 +9,8 @@ public class coinClickerScript : MonoBehaviour
     public GameObject imageTarget;
     public GameObject vbObj;
     public GameObject nextCoin;
+    public progessBarScript barIncreaseScr;
+
     GameObject coin;
     GameObject roomInfoPlane;
     GameObject nextHintPlane;
@@ -39,6 +41,8 @@ public class coinClickerScript : MonoBehaviour
             ++scoreInt;
             currScore = currScore.Substring(0, currScore.Length - 1) + scoreInt.ToString();
             scoreText.text = currScore;
+            barIncreaseScr.IncrementProgress(0.25f);
+
         }
         //Debug.Log("Btn Pressed!");
     }
