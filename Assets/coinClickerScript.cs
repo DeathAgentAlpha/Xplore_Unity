@@ -47,6 +47,24 @@ public class coinClickerScript : MonoBehaviour
         //Debug.Log("Btn Pressed!");
     }
 
+    public void onFButtonPressed()
+    {
+        if (coin.activeSelf)
+        {
+            coin.SetActive(false);
+            roomInfoPlane.SetActive(true);
+            nextCoin.SetActive(true);
+            string currScore = scoreText.text;
+            int scoreInt = currScore[currScore.Length - 1] - '0';
+            ++scoreInt;
+            currScore = currScore.Substring(0, currScore.Length - 1) + scoreInt.ToString();
+            scoreText.text = currScore;
+            barIncreaseScr.IncrementProgress(0.25f);
+
+        }
+        //Debug.Log("Btn Pressed!");
+    }
+
     // Update is called once per frame
     void Update()
     {

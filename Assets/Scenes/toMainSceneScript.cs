@@ -8,6 +8,6 @@ public class toMainSceneScript : MonoBehaviour
     // Start is called before the first frame update
     public void ToMaineScene()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 }
